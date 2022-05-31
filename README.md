@@ -47,7 +47,7 @@ QBShared.Items = {
 
 
 ## Insert into @qb-target - init.lua - config.targetmodels
-``` ["methdeliveryped"] = {
+ ["methdeliveryped"] = {
 		models = {
 			"s_m_y_ammucity_01"
 		},
@@ -61,4 +61,4 @@ QBShared.Items = {
 		},
 		distance = 2.5,
 	}, 
-  ```
+ 
