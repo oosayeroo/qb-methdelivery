@@ -1,4 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+local pedloaded = false
 
 RegisterNetEvent('qb-methdelivery:client:StartJob', function()
     TriggerEvent('animations:client:EmoteCommandStart', {"idle"})
@@ -66,7 +67,7 @@ Citizen.CreateThread(function()
 end)
 
 RegisterNetEvent('qb-methdelivery:spawn:ped')
-AddEventHandler('qb-weedshop:spawn:ped',function(coords)
+AddEventHandler('qb-methdelivery:spawn:ped',function(coords)
 	local hash = `s_m_y_ammucity_01`
 
 	RequestModel(hash)
@@ -74,7 +75,7 @@ AddEventHandler('qb-weedshop:spawn:ped',function(coords)
 		Wait(10)
 	end
 
-    	pedspawned = true
+    	pedloaded = true
         npc = CreatePed(5, hash, coords.x, coords.y, coords.z - 1.0, coords.w, false, false)
         FreezeEntityPosition(npc, true)
         SetBlockingOfNonTemporaryEvents(npc, true)
@@ -89,7 +90,7 @@ function loadAnimDict(dict)
     end
 end
 
-RegisterNetEvent('qb-menu:DeliveryJob', function(data)
+RegisterNetEvent('qb-methdelivery:client:DeliveryJob', function(data)
     exports['qb-menu']:openMenu({
         {
             
@@ -106,8 +107,8 @@ RegisterNetEvent('qb-menu:DeliveryJob', function(data)
         },
         {
            
-            header = "• Get Paid",
-            txt = "Get paid for the meth",
+            header = "• Give Meth",
+            txt = "Give large bag of meth",
             params = {
                 event = "qb-methdelivery:client:ReceivePayment"
             }
