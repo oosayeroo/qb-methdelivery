@@ -1,5 +1,7 @@
 # qb-methdelivery
 
+#still a WIP
+
 # A simple meth delivery job for qbcore
 
 Discord - https://discord.gg/XPuqBVtyqX
