@@ -57,7 +57,7 @@ QBShared.Items = {
 		options = {
 			{
 				type = "client",
-				event = "qb-menu:DeliveryJob",
+				event = "qb-methdelivery:client:DeliveryJob",
 				icon = "fas fa-pill",
 				label = "Meth Head",
 			}
